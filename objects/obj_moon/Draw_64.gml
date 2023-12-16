@@ -1,0 +1,1 @@
+//draw_sprite_ext(spr_moon, image_index, x, y, 1, 1, 0, c_gray, 3.5);
