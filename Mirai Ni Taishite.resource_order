@@ -35,6 +35,8 @@
     {"name":"PlayerBase","order":5,"path":"folders/Sprites/Player/PlayerBase.yy",},
     {"name":"Tiles","order":15,"path":"folders/Sprites/Tiles.yy",},
     {"name":"UI","order":14,"path":"folders/Sprites/UI.yy",},
+    {"name":"Menu","order":15,"path":"folders/Objetos/Menu.yy",},
+    {"name":"Menu","order":20,"path":"folders/Sprites/Menu.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_boss_disc_atk","order":3,"path":"sprites/spr_boss_disc_atk/spr_boss_disc_atk.yy",},
@@ -55,6 +57,7 @@
     {"name":"spr_player_diag_damaged","order":4,"path":"sprites/spr_player_diag_damaged/spr_player_diag_damaged.yy",},
     {"name":"spr_icon_48","order":1,"path":"sprites/spr_icon_48/spr_icon_48.yy",},
     {"name":"spr_icon_192","order":5,"path":"sprites/spr_icon_192/spr_icon_192.yy",},
+    {"name":"rm_menu","order":2,"path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"obj_c_jump","order":2,"path":"objects/obj_c_jump/obj_c_jump.yy",},
     {"name":"spr_bkg_ice","order":2,"path":"sprites/spr_bkg_ice/spr_bkg_ice.yy",},
     {"name":"spr_button_shot","order":3,"path":"sprites/spr_button_shot/spr_button_shot.yy",},

@@ -27,6 +27,8 @@ test = 10;
 
 spawn_boss = 0;
 
+global.game_paused = false;
+
 global.floor = [layer_tilemap_get_id("tile_floor")];
 
 //show_debug_log(true);

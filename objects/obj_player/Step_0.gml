@@ -7,6 +7,11 @@ var _vx = camera_get_view_x(view_camera[1]);
 var _vw = camera_get_view_width(view_camera[1]);
 var _final_x = _vx + _vw;
 
+if(keyboard_check_pressed(vk_escape)){
+	global.game_paused = true;
+	room_goto(rm_menu);
+}
+
 if(room = rm_01){
 
 if(obj_boss_area.boss_battle){
