@@ -150,6 +150,7 @@
     {"id":{"name":"spr_chest_open","path":"sprites/spr_chest_open/spr_chest_open.yy",},},
     {"id":{"name":"spr_chest","path":"sprites/spr_chest/spr_chest.yy",},},
     {"id":{"name":"spr_cloud","path":"sprites/spr_cloud/spr_cloud.yy",},},
+    {"id":{"name":"spr_coin_spin","path":"sprites/spr_coin_spin/spr_coin_spin.yy",},},
     {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},},
     {"id":{"name":"spr_enemy_alien","path":"sprites/spr_enemy_alien/spr_enemy_alien.yy",},},
     {"id":{"name":"spr_enemy_bullet","path":"sprites/spr_enemy_bullet/spr_enemy_bullet.yy",},},

@@ -4,7 +4,7 @@
 image_speed = 1;
 coin = 0;
 
-sprite_index = spr_coin;
+sprite_index = spr_coin_spin;
 spawn_chest = false;
 
 

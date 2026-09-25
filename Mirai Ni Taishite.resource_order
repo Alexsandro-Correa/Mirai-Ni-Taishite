@@ -106,6 +106,7 @@
     {"name":"spr_button_jump","order":3,"path":"sprites/spr_button_jump/spr_button_jump.yy",},
     {"name":"spr_chest_open","order":1,"path":"sprites/spr_chest_open/spr_chest_open.yy",},
     {"name":"spr_cloud","order":11,"path":"sprites/spr_cloud/spr_cloud.yy",},
+    {"name":"spr_coin_spin","order":2,"path":"sprites/spr_coin_spin/spr_coin_spin.yy",},
     {"name":"spr_coin","order":1,"path":"sprites/spr_coin/spr_coin.yy",},
     {"name":"spr_enemy_mount","order":8,"path":"sprites/spr_enemy_mount/spr_enemy_mount.yy",},
     {"name":"spr_enemy_soldier","order":3,"path":"sprites/spr_enemy_soldier/spr_enemy_soldier.yy",},
