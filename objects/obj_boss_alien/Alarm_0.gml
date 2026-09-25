@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 if(num_attack < max_attack){
-	state = choose(attack);
+	state = choose(attack,attack);
 	num_attack++;
 	alarm[0] = 15;
 }else{

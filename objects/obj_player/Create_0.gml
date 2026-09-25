@@ -1,16 +1,36 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+half_h = sprite_height / 2;
+
+scr_collisions();
+
+lying = false;
+
+
+
+#region Status do Player
 
 life = 3;
 damage = false;
 immunity = false;
 stopped = false;
 
+#endregion
+
+#region Comandos
+
 left = false;
 right = false;
 up = false;
+down = false;
+diag_up = false;
+diag_down = false;
 shoot = false;
+
+#endregion
+
+#region Velocidade e Pulo
 
 spd = 4;
 spd_jump = 6;
@@ -20,16 +40,16 @@ max_spd_fall = 8;
 
 jump = false;
 
-jump_height = 192;
-jump_frames = 0;
 
-test = 10;
+#endregion
+
+#region Spawn Boss
 
 spawn_boss = 0;
 
-global.game_paused = false;
+#endregion
 
-global.floor = [layer_tilemap_get_id("tile_floor")];
+
 
 //show_debug_log(true);
 

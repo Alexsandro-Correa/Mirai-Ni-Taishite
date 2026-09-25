@@ -45,7 +45,7 @@ if(_collision){
 	if(life == 0){
 		audio_play_sound(snd_alien,1,false);
 		instance_destroy();
-		instance_create_layer(x, y-36, 1, obj_explosion);
+		instance_create_layer(x, y, "Instances", obj_explosion);
 		obj_coin.coin +=5;
 		
 		

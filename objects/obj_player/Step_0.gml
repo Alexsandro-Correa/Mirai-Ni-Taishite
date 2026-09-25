@@ -1,260 +1,348 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
+/// STEP - obj_player
 
-//camera_set_view_pos(view_camera[0],x-view_wport[0]/2,y-view_hport[0]/2);
- 
-var _vx = camera_get_view_x(view_camera[1]);
-var _vw = camera_get_view_width(view_camera[1]);
-var _final_x = _vx + _vw;
+#region INPUT
 
-if(keyboard_check_pressed(vk_escape)){
-	global.game_paused = true;
-	room_goto(rm_menu);
+key_left  = keyboard_check(vk_left)  || keyboard_check(ord("A"));
+key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+key_up    = keyboard_check(vk_up)    || keyboard_check(ord("W"));
+key_down  = keyboard_check(vk_down)  || keyboard_check(ord("S"));
+
+shoot = keyboard_check_pressed(ord("X"));
+
+left  = key_left;
+right = key_right;
+aim_up = key_up;
+down  = key_down;
+
+#endregion
+
+if (global.game_paused) exit;
+
+#region PAUSE
+
+if (keyboard_check_pressed(vk_escape) && !global.game_paused)
+{
+    global.game_paused = true;
+    instance_create_layer(0, 0, "Instances", obj_menu);
 }
 
-if(room = rm_01){
+#endregion
 
-if(obj_boss_area.boss_battle){
-	// view_camera[0] = camera_create_view(0, 0, view_wport[0], view_hport[0], 0, obj_set_camera, -1, -1, 400, 250);
-	view_set_camera(0,view_camera[1])
-	if(x < _vx + 64){
-		left = false;
-	}
-}else{
-	view_camera[0] = camera_create_view(0, 0, view_wport[0], view_hport[0], 0, obj_player, -1, -1, 400, 250);
-	
+
+
+#region CAMERA E BOSS
+
+var cam = view_camera[0];
+
+if (cam != noone)
+{
+    var cam_w = camera_get_view_width(cam);
+    var cam_y = camera_get_view_y(cam);
+    var target_x = x - cam_w / 2;
+
+    if (instance_exists(obj_boss_area))
+    {
+        var area = instance_find(obj_boss_area, 0);
+        if (area.boss_battle)
+            target_x = room_width - cam_w;
+    }
+
+    target_x = clamp(target_x, 0, room_width - cam_w);
+    camera_set_view_pos(cam, target_x, cam_y);
 }
 
+#endregion
+
+
+
+#region MOVIMENTO TILEMAP
+
+// ================= VERTICAL (chão primeiro pra usar no lying) =================
+
+var on_ground =
+    tilemap_get_at_pixel(global.floor, bbox_left + 4, bbox_bottom + 1) != 0 ||
+    tilemap_get_at_pixel(global.floor, bbox_right - 4, bbox_bottom + 1) != 0;
+
+var want_lie = down && on_ground;
+
+if (want_lie && !lying)
+{
+    y += 16; // compensação da diferença de altura
+    lying = true;
+}
+else if (!want_lie && lying)
+{
+    y -= 16;
+    lying = false;
 }
 
-//Controllers
 
 
+// ================= HORIZONTAL =================
 
-if(left && place_free(x-spd,y) && x > 36 && !place_meeting(x-4,y + spd_fall - 12,global.floor)){
-	left = false;
-	x-=spd;
-	image_xscale = -1;
-	stopped = false;
-	image_speed = 2;
-	if(up){
-		up = false;
-		if(immunity){
-			sprite_index = spr_player_diag_damaged;
-		}else{
-			sprite_index = spr_player_diag;	
-		}
-	}else{
-		if(immunity){
-			sprite_index = spr_player_damaged;
-		}else{
-			sprite_index = spr_player;
-		}
-	}
-}else if(right  && place_free(x+spd,y) && x < room_width-36 && !place_meeting(x+4,y + spd_fall -12,global.floor)){
-	right = false;
-	x+=spd;
-	image_xscale = 1;
-	stopped = false;
-	image_speed = 2;
-	if(up){
-		up = false;
-		if(immunity){
-			sprite_index = spr_player_diag_damaged;
-		}else{
-			sprite_index = spr_player_diag;	
-		}
-	}else{
-		if(immunity){
-			sprite_index = spr_player_damaged;
-		}else{
-			sprite_index = spr_player;
-		}
-	}
-}else{
-	stopped = true;
+var move = 0;
+
+if (!lying)
+{
+    move = right - left;
 }
 
-if(shoot){
-	shoot = false;
-	audio_play_sound(snd_shoot1,1,false);
-	var _obj = instance_create_depth(x,y,-10,obj_bullet);
-	var _obj2 = instance_create_depth(x,y,-10,obj_splash_gun);
-	_obj2.y = y-3;
-	if(sprite_index = spr_player_diag || sprite_index == spr_player_diag_damaged){
-		_obj.diag = true;
-		_obj.y = y-20;
-		if(image_xscale = 1){
-			_obj.x = x+56;
-			_obj.image_angle = 30;
-		}else{
-			_obj.x = x-56;
-			_obj.image_angle = -30;
-		}
-		
-		
-	}
-	_obj.dir = image_xscale;
-	_obj.image_xscale = image_xscale;
-	_obj2.dir = image_xscale;
-	_obj2.image_xscale = image_xscale;
-	
-}
+var hsp = move * spd;
 
-if(stopped){
-	if(immunity && !up){
-		image_speed = 2;
-		sprite_index = spr_player_damaged;
-		if(image_index > 1 ){
-			image_index = 0;
-		}
-	}else if(immunity && up){
-		up = false;
-		image_speed = 2;
-		sprite_index = spr_player_diag_damaged;
-		if(image_index > 1 ){
-			image_index = 0;
-		}
-	}else if(!immunity && up){
-		up = false;
-		image_speed = 0;
-		sprite_index = spr_player_diag;
-		image_index = 0;
-	}else{
-		image_speed = 0;
-		image_index = 0;
-		sprite_index = spr_player;		
-	}
-}
+if (hsp != 0)
+{
+    var side = sign(hsp);
+    var check_x = (side > 0) ? bbox_right + hsp : bbox_left + hsp;
 
-if(jump){
-	spd_fall = 2;
-	image_index = 1;
-	if(jump_frames < jump_height){
-		if(!place_meeting(x,y+spd_fall - 12 ,global.floor)){
-			jump_frames+=spd_jump;
-			y-=spd_jump;
-		}else{
-			jump = false;
-			jump_frames = 0;
-		}
-	}else{
-		jump = false;
-		jump_frames = 0;
-	}
-}
+    var top_check =
+        tilemap_get_at_pixel(global.floor, check_x, bbox_top + 4);
 
-//Queda
-if(jump == false){
-	spd_fall += grvt;
-    if(!place_meeting(x, y + max_spd_fall +5, global.floor)){
-        image_index = 1;
-        y += spd_fall;
-    } else {
-        while(!place_meeting(x, y + 1, global.floor)){
-            y += 1;
+    var bottom_check =
+        tilemap_get_at_pixel(global.floor, check_x, bbox_bottom - 4);
+
+    if (top_check == 0 && bottom_check == 0)
+    {
+        x += hsp;
+    }
+    else
+    {
+        while (
+            tilemap_get_at_pixel(global.floor,
+                (side > 0 ? bbox_right + side : bbox_left + side),
+                bbox_top + 4) == 0 &&
+            tilemap_get_at_pixel(global.floor,
+                (side > 0 ? bbox_right + side : bbox_left + side),
+                bbox_bottom - 4) == 0
+        )
+        {
+            x += side;
         }
+    }
+}
+
+
+
+// ================= VERTICAL =================
+
+if (keyboard_check_pressed(vk_space) && on_ground && !lying)
+{
+    spd_fall = -8;
+}
+
+spd_fall += grvt;
+
+if (spd_fall > max_spd_fall)
+    spd_fall = max_spd_fall;
+
+if (spd_fall != 0)
+{
+    var dir = sign(spd_fall);
+
+   if (spd_fall > 0) // caindo
+{
+    var left_check =
+        tilemap_get_at_pixel(global.floor, bbox_left + 4, bbox_bottom + spd_fall);
+
+    var right_check =
+        tilemap_get_at_pixel(global.floor, bbox_right - 4, bbox_bottom + spd_fall);
+}
+else // subindo (batendo cabeça)
+{
+    var left_check =
+        tilemap_get_at_pixel(global.floor, bbox_left + 4, bbox_top + spd_fall);
+
+    var right_check =
+        tilemap_get_at_pixel(global.floor, bbox_right - 4, bbox_top + spd_fall);
+}
+
+    if (left_check == 0 && right_check == 0)
+    {
+        y += spd_fall;
+    }
+    else
+    {
+        while (
+            tilemap_get_at_pixel(global.floor, bbox_left + 4, bbox_bottom + dir) == 0 &&
+            tilemap_get_at_pixel(global.floor, bbox_right - 4, bbox_bottom + dir) == 0 &&
+			 tilemap_get_at_pixel(global.floor, bbox_left + 4, bbox_top + dir) == 0 &&
+            tilemap_get_at_pixel(global.floor, bbox_right - 4, bbox_top + dir) == 0
+        )
+        {
+            y += dir;
+        }
+
         spd_fall = 0;
     }
 }
 
+#endregion
 
 
-//--------------------------------
 
-//Android
-// No evento Step do objeto player
-if(os_type == os_android){
-    var _max_touches = 4; // Número máximo de toques simultâneos que você deseja detectar
-    for (var _i = 0; _i < _max_touches; _i++) {
-        var _mx = device_mouse_x_to_gui(_i);
-        var _my = device_mouse_y_to_gui(_i);
-        if (device_mouse_check_button(_i, mb_left)) {
-            if (place_meeting(_mx, _my, obj_c_jump)) {
-                if(!place_free(x,y+1)){
-					jump = true;
-				}
-			}
+#region SPRITES
+
+if (move != 0)
+{
+    image_xscale = sign(move);
+    stopped = false;
+}
+else
+{
+    stopped = true;
+}
+
+var diag = (aim_up && (right || left));
+
+// ================= PRIORIDADE =================
+
+// 1️⃣ DEITADO
+if (lying)
+{
+    image_speed = 0;
+    image_index = 0;
+    sprite_index = spr_player_fall;
+}
+
+// 2️⃣ RESTANTE DO SISTEMA
+else
+{
+    if (stopped)
+    {
+        if (immunity)
+        {
+            image_speed = 2;
+
+            if (diag)
+                sprite_index = spr_player_diag_damaged;
+            else
+                sprite_index = spr_player_damaged;
+
+            if (image_index > 1)
+                image_index = 0;
         }
-		if(device_mouse_check_button_pressed(_i,mb_left)){
-			if(place_meeting(_mx, _my, obj_c_shoot)) {
-                shoot = true;
-            }
-		}
+        else
+        {
+            image_speed = 0;
+            image_index = 0;
+
+            if (diag)
+                sprite_index = spr_player_diag;
+            else if (aim_up)
+                sprite_index = spr_player_up;
+            else
+                sprite_index = spr_player;
+        }
+    }
+    else
+    {
+        image_speed = 2;
+
+        if (immunity)
+        {
+            if (diag)
+                sprite_index = spr_player_diag_damaged;
+            else
+                sprite_index = spr_player_damaged;
+        }
+        else
+        {
+            if (diag)
+                sprite_index = spr_player_diag;
+            else
+                sprite_index = spr_player;
+        }
     }
 }
 
-//------------
+#endregion
 
 
-if(damage){
-	//life--;
-	immunity = true;
-	spd_fall = 2;
-	x = x-150;
-	y = 100;
-	if(x < 0){
-		x = 50;
-	}
-	
-	if(instance_exists(obj_boss_area)){
-		if(obj_boss_area.boss_battle == true){
-			x = _vx + 20;
-		}
-	}
-	damage = false;
+
+#region TIRO
+
+if (shoot)
+{
+    audio_play_sound(snd_shoot1,1,false);
+
+    var _obj  = instance_create_depth(x,y,-10,obj_bullet);
+    var _obj2 = instance_create_depth(x,y,-10,obj_splash_gun);
+
+    if (lying)
+    {
+        _obj.diag = false;
+        _obj.up = false;
+        _obj.dir = image_xscale;
+    }
+    else if (diag)
+    {
+        _obj.diag = true;
+        _obj.up = false;
+        _obj.dir = image_xscale;
+    }
+    else if (aim_up)
+    {
+        _obj.diag = false;
+        _obj.up = true;
+        _obj.dir = 1;
+    }
+    else
+    {
+        _obj.diag = false;
+        _obj.up = false;
+        _obj.dir = image_xscale;
+    }
+
+    _obj2.dir = _obj.dir;
+    _obj2.image_xscale = image_xscale;
 }
 
-if(keyboard_check(vk_right)){
-	right = true;
-}
-else if(keyboard_check(vk_left)){
-	left = true;	
-}
-if(keyboard_check(vk_space)){
-	if(place_meeting(x,y+1,global.floor)){
-		jump = true;
-	}
-}
-if(keyboard_check(vk_up)){
-	up = true;
-}
-if(keyboard_check_pressed(ord("X"))){
-	shoot = true;
-}
-
-if(immunity){
-	if( alarm[0] < 0){
-		alarm[0] = 60*5;
-	}
-}
-
-if( y > room_height){
-	damage = true;
-}
-
-if(place_meeting(x,y,obj_enemy_alien) || place_meeting(x,y,obj_boss_alien) || place_meeting(x,y,obj_boss_alien_attack) ){
-	if(immunity == false){
-		damage = true;
-	}
-}
+#endregion
 
 
-if(life == 0){
-		room_restart();
-	}
 
-//Sitema para salvar jogo
-if(keyboard_check(ord("S"))){
-	game_save("save1.dat");
+#region DANO
+
+if (y > room_height)
+    damage = true;
+
+if (
+    place_meeting(x,y,obj_enemy_alien) ||
+    place_meeting(x,y,obj_boss_alien) ||
+    place_meeting(x,y,obj_boss_alien_attack) ||
+    place_meeting(x,y,obj_enemy_bullet) ||
+    place_meeting(x,y,obj_father_base)
+)
+{
+    if (!immunity)
+        damage = true;
 }
 
-if(keyboard_check(ord("C"))){
-	game_load("save1.dat");
+if (damage)
+{
+    life--;
+    immunity = true;
+    spd_fall = 2;
+	camera_shake(8, 30); // treme a câmera quando toma dano
+
+    x -= 150;
+    y = 100;
+
+    if (x < 0)
+        x = 50;
+
+    damage = false;
 }
 
-if(room == rm_02){
-	if(!instance_exists(obj_enemy_alien)){
-		room_goto(rm_01);
-	}
+if (immunity && alarm[0] < 0)
+{
+    alarm[0] = room_speed * 3;
+}
+
+#endregion
+
+
+
+if (life <= 0)
+{
+    room_restart();
 }

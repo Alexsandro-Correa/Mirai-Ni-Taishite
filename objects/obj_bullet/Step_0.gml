@@ -1,8 +1,9 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-
+if(!up){
 x+=8*dir;
+}
 
 if(place_meeting(x,y,global.floor)){
 	instance_destroy();
@@ -10,4 +11,8 @@ if(place_meeting(x,y,global.floor)){
 
 if(diag){
 	y-=3;
+}
+
+if(up){
+	y-=8*dir;
 }

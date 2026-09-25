@@ -1,0 +1,9 @@
+.gmcache/
+cache/
+temp/
+build/
+dist/
+exports/
+*.log
+.DS_Store
+Thumbs.db

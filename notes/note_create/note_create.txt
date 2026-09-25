@@ -1,0 +1,24 @@
+Mirai Ni Taishite
+
+Desenvolvimento do Jogo
+
+1 - Criar Personagem - Pendente
+
+	1.1 - Direções E Movimentos - Pendente
+	
+		1.1.1 - Direita - Feito
+		1.1.2 - Esquerda - Feito
+		1.1.3 - Diagonais para cima - Feito
+		1.1.4 - Diagonais para baixo - Pendente
+		1.1.5 - Cima - Feito
+		1.1.6 - Baixo - Pendente
+		1.1.7 - Pulo - Feito
+		1.1.8 - Deslizar - Pendente
+		1.1.9 - Animação de Dano - Feito
+		
+	1.2 - Tiros e Armas - Pendente
+	
+		1.2.1 - Arma Básica - Feito
+		1.2.2 - Arma Laser? - Pendente
+		1.2.3
+		

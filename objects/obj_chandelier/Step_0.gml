@@ -9,8 +9,8 @@ if(fall){
 	y+=6;
 }
 
-
-
-
+if(place_meeting(x,y,global.floor)){
+	instance_destroy();		
+}
 
 
