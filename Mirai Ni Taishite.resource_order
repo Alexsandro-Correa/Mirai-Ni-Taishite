@@ -60,6 +60,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"note_fixes","order":1,"path":"notes/note_fixes/note_fixes.yy",},
+    {"name":"obj_alien","order":8,"path":"objects/obj_alien/obj_alien.yy",},
     {"name":"obj_boss_alien_attack","order":1,"path":"objects/obj_boss_alien_attack/obj_boss_alien_attack.yy",},
     {"name":"obj_boss_area","order":2,"path":"objects/obj_boss_area/obj_boss_area.yy",},
     {"name":"obj_c_jump","order":2,"path":"objects/obj_c_jump/obj_c_jump.yy",},
@@ -87,6 +88,8 @@
     {"name":"snd_itemfind","order":3,"path":"sounds/snd_itemfind/snd_itemfind.yy",},
     {"name":"snd_shoot_laser","order":1,"path":"sounds/snd_shoot_laser/snd_shoot_laser.yy",},
     {"name":"spr_alien_flash_ab","order":2,"path":"sprites/spr_alien_flash_ab/spr_alien_flash_ab.yy",},
+    {"name":"spr_alien_shot","order":10,"path":"sprites/spr_alien_shot/spr_alien_shot.yy",},
+    {"name":"spr_alien_walk","order":9,"path":"sprites/spr_alien_walk/spr_alien_walk.yy",},
     {"name":"spr_analog_circle","order":2,"path":"sprites/spr_analog_circle/spr_analog_circle.yy",},
     {"name":"spr_analog_stick","order":1,"path":"sprites/spr_analog_stick/spr_analog_stick.yy",},
     {"name":"spr_backgroud_leoIA","order":10,"path":"sprites/spr_backgroud_leoIA/spr_backgroud_leoIA.yy",},
