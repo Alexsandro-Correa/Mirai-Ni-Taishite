@@ -24,7 +24,7 @@
   ],
   "name":"spr_enemy_teleporter",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Enemies",
     "path":"folders/Sprites/Enemies.yy",
@@ -80,7 +80,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":15,
-    "yorigin":32,
+    "yorigin":64,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

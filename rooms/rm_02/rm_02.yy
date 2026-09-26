@@ -43,7 +43,7 @@
           41,29,29,9,1,25,-19,0,3,41,29,39,-159,0,1,35,-19,21,-2,0,1,41,-19,29,-88,0,1,37,-21,0,2,3,37,-20,0,3,
           1,3,37,-19,0,4,29,9,3,37,-19,0,5,41,29,11,21,37,-19,0,4,41,29,11,37,-20,0,3,41,31,23,-10,21,1,37,-10,
           0,1,41,-4,29,1,9,-5,1,1,25,-15,0,1,41,-5,29,1,39,-93,0,1,35,-19,21,-2,0,1,41,-19,29,-110,0,-18,21,1,
-          37,-3,0,-18,29,1,39,-377,0,-22,21,
+          37,-3,0,-18,29,1,39,-162,0,1,35,-16,21,-5,0,1,41,-16,29,-176,0,-22,21,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tl_vec_neoncity","path":"tilesets/tl_vec_neoncity/tl_vec_neoncity.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":3.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":"_effect_windblown_particles","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[
         {"name":"param_sprite","type":2,"value":"spr_stardust",},
@@ -141,7 +141,7 @@
     "Height":7040,
     "inheritRoomSettings":false,
     "persistent":false,
-    "Width":1366,
+    "Width":1408,
   },
   "sequenceId":null,
   "views":[

@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 if(obj_player.sprite_index == spr_player || obj_player.sprite_index == spr_player_damaged){
-	y = obj_player.y -3; 
+	y = obj_player.y -43; 
 	if(dir == 1){
 		x = obj_player.x +45;
 	}else if(dir == -1){

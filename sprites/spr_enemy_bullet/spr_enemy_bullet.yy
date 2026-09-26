@@ -23,7 +23,7 @@
   ],
   "name":"spr_enemy_bullet",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Adons",
     "path":"folders/Sprites/Enemies/Adons.yy",
@@ -68,13 +68,15 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"04cec476-8fde-46cc-9ed9-9d2022f18f63","path":"sprites/spr_enemy_bullet/spr_enemy_bullet.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"d2d49843-480c-4a8b-a44d-e6d59012966f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"04cec476-8fde-46cc-9ed9-9d2022f18f63","path":"sprites/spr_enemy_bullet/spr_enemy_bullet.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d2d49843-480c-4a8b-a44d-e6d59012966f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
     "xorigin":9,
-    "yorigin":6,
+    "yorigin":12,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

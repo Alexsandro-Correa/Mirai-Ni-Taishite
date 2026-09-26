@@ -1,6 +1,6 @@
 /// STEP - obj_player
 
-#region INPUT
+#region INPUT Controles
 
 key_left  = keyboard_check(vk_left)  || keyboard_check(ord("A"));
 key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
@@ -67,12 +67,10 @@ var want_lie = down && on_ground;
 
 if (want_lie && !lying)
 {
-    y += 16; // compensação da diferença de altura
     lying = true;
 }
 else if (!want_lie && lying)
 {
-    y -= 16;
     lying = false;
 }
 
@@ -263,9 +261,31 @@ else
 if (shoot)
 {
     audio_play_sound(snd_shoot1,1,false);
+	
+	var _dir_bullet = 0;
+	
 
-    var _obj  = instance_create_depth(x,y,-10,obj_bullet);
-    var _obj2 = instance_create_depth(x,y,-10,obj_splash_gun);
+		if(image_xscale == -1){
+			_dir_bullet = -45;
+			show_debug_message("Right")
+		}else{
+			_dir_bullet = 45;
+			show_debug_message("Left")
+		}
+
+
+    var _obj  = instance_create_depth(x + _dir_bullet,y - 43,-10,obj_bullet);
+    var _obj2 = instance_create_depth(x,y + 43,-10,obj_splash_gun);
+
+	
+	if(instance_exists(obj_splash_gun)){
+			if(image_xscale == -1){
+				obj_bullet.image_xscale = -1;
+			}else{
+				obj_bullet.image_xscale = 1;
+			}
+	}
+	
 
     if (lying)
     {

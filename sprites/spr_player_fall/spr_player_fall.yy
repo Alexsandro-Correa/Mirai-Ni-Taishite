@@ -42,7 +42,7 @@
     ],
     "top":0,
   },
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"PlayerBase",
     "path":"folders/Sprites/Player/PlayerBase.yy",
@@ -95,7 +95,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":63,
-    "yorigin":24,
+    "yorigin":49,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

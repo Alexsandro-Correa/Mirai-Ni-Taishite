@@ -23,7 +23,7 @@
   ],
   "name":"spr_player_diag",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"PlayerBase",
     "path":"folders/Sprites/Player/PlayerBase.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":31,
-    "yorigin":40,
+    "yorigin":80,
   },
   "swatchColours":null,
   "swfPrecision":2.525,
