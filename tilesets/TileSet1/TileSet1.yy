@@ -19,10 +19,7 @@
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
-  "spriteId":{
-    "name":"spr_tile_world",
-    "path":"sprites/spr_tile_world/spr_tile_world.yy",
-  },
+  "spriteId":null,
   "spriteNoExport":false,
   "textureGroupId":{
     "name":"Default",

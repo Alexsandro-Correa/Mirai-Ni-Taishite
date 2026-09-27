@@ -1,20 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_father_base",
+  "%Name":"obj_enemy_biker",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_father_base",
+  "name":"obj_enemy_biker",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
     "path":"folders/Objetos/Enemies.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_father_base",
+    "path":"objects/obj_father_base/obj_father_base.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_biker_walk",
+    "path":"sprites/spr_biker_walk/spr_biker_walk.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

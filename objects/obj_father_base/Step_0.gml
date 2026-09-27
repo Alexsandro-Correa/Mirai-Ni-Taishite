@@ -10,26 +10,27 @@ if(!place_meeting(x,y-1, global.floor)){
 }
 
 
+if (dir == 1) {
+    if (place_meeting(bbox_right + sprite_width/2, bbox_bottom , global.floor) 
+	&& !place_meeting(x + 4,y-2,global.floor)) {
+        x += self.spd;
+    } else {
+        dir = -1;
+        image_xscale = -1;
+    }
+}
 
-
-if(dir == 1){
-	if(!place_meeting(x+8,y-2,global.floor) && place_meeting(x+32,y+30,global.floor)){
-		x+=self.spd;
-	}else{
-		dir=-1;
-		image_xscale = -1;
-	}
+if (dir == -1) {
+    if (place_meeting(bbox_left + sprite_width/2, bbox_bottom , global.floor)
+	&& !place_meeting(x - 4,y-2,global.floor)) {
+        x -= self.spd;
+    } else {
+        dir = 1;
+        image_xscale = 1;
+    }
 }
 
 
-if(dir == -1){
-	if(!place_meeting(x-8,y-2,global.floor) && place_meeting(x-32,y+30,global.floor)){
-		x-=self.spd;
-	}else{
-		dir=1;
-		image_xscale = 1;
-	}
-}
 
 
 var _collision = instance_place(x,y,obj_bullet)
@@ -39,10 +40,7 @@ if(_collision){
 	life--;
 	if(life == 0){
 		audio_play_sound(snd_alien,1,false);
-		instance_destroy();
-		instance_create_layer(x, y, "Instances", obj_explosion);
-		obj_coin.coin +=5;
-		
+		alarm[0] = 55;	
 		
 	}
 
