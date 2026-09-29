@@ -2,7 +2,7 @@
 // ================= FUNDO =================
 
 draw_sprite_stretched(
-    spr_bkg_winter,
+    spr_background_fase1,
     0,
     0,
     0,

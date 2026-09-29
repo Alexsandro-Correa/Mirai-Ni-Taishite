@@ -1,8 +1,16 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+if(stop == false){
+	max_spd = max_spd;
+	spd = spd;
+}else{
+	max_spd = 0;
+	spd = 0;
+}
+
 if(spd < max_spd){
-	spd = max_spd;
+		spd = max_spd;
 }
 
 if(!place_meeting(x,y-1, global.floor)){
@@ -40,7 +48,8 @@ if(_collision){
 	life--;
 	if(life == 0){
 		audio_play_sound(snd_alien,1,false);
-		alarm[0] = 55;	
+		stop = true;
+		alarm[0] = 70;	
 		
 	}
 

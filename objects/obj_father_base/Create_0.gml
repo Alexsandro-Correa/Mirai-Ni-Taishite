@@ -8,6 +8,7 @@ is_dashing = false;
 
 spd = 2;
 max_spd = 2;
+stop = false;
 
 fl = 0;
 max_fl = 10;

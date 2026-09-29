@@ -2,6 +2,7 @@
 // Você pode escrever seu código neste editor
 
 event_inherited();
+spd = 5;
 
 if(life == 0){
 	biker_death = true;
@@ -10,6 +11,11 @@ if(life == 0){
 
 if(biker_death == true){
 	sprite_index = spr_biker_death;
+	if (image_index >= image_number - 1) {
+    image_speed = 0;
+    image_index = image_number - 1;
+}
+
 }else{
 	if(instance_exists(obj_player)){
 	player_detected_y = abs(obj_player.y - y);

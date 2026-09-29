@@ -98,4 +98,17 @@ if(os_type == os_android){
 
 #endregion
 
+#region Background Estático Acompanhando a câmera
+
+// Pega a posição X e Y atuais da câmera ativa
+var _cam_x = camera_get_view_x(view_camera[0]);
+var _cam_y = camera_get_view_y(view_camera[0]);
+
+// Pega o ID da camada de background (substitua "Background" pelo nome exato da sua camada)
+var _bg_id = layer_get_id("bkg_space");
+
+// Move a coordenada do background junto com a câmera
+layer_x(_bg_id, _cam_x);
+layer_y(_bg_id, _cam_y);
+
 #endregion

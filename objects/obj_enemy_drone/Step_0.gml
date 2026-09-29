@@ -1,0 +1,49 @@
+/// @description Inserir descrição aqui
+// Você pode escrever seu código neste editor
+
+if(stop == false){
+	max_spd = max_spd;
+	spd = spd;
+}else{
+	max_spd = 0;
+	spd = 0;
+}
+
+if(spd < max_spd){
+		spd = max_spd;
+}
+
+if (dir == 1) {
+    if(!place_meeting(x + 4,y-2,global.floor)) {
+        x += self.spd;
+    } else {
+        dir = -1;
+        image_xscale = -1;
+    }
+}
+
+if (dir == -1) {
+    if (!place_meeting(x - 4,y-2,global.floor)) {
+        x -= self.spd;
+    } else {
+        dir = 1;
+        image_xscale = 1;
+    }
+}
+
+
+
+
+var _collision = instance_place(x,y,obj_bullet)
+
+if(_collision){
+	with(_collision)instance_destroy();
+	life--;
+	if(life == 0){
+		audio_play_sound(snd_alien,1,false);
+		stop = true;
+		alarm[0] = 70;	
+		
+	}
+
+}

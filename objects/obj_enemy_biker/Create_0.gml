@@ -3,7 +3,7 @@
 
 event_inherited();
 
-spd = 4;
+spd = 5;
 
 player_detected_x = 0;
 player_detected_y = 0;
