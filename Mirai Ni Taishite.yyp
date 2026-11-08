@@ -42,8 +42,8 @@
     {"$GMFolder":"","%Name":"Alien","folderPath":"folders/Sprites/Enemies/Alien.yy","name":"Alien","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Biker","folderPath":"folders/Sprites/Enemies/Biker.yy","name":"Biker","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Bomber","folderPath":"folders/Sprites/Enemies/Bomber.yy","name":"Bomber","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Drone","folderPath":"folders/Sprites/Enemies/Drone.yy","name":"Drone","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Ciborg","folderPath":"folders/Sprites/Enemies/Ciborg.yy","name":"Ciborg","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Drone","folderPath":"folders/Sprites/Enemies/Drone.yy","name":"Drone","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Illustrated","folderPath":"folders/Sprites/Illustrated.yy","name":"Illustrated","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Side","folderPath":"folders/Sprites/Illustrated/Side.yy","name":"Side","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Map Interactions","folderPath":"folders/Sprites/Map Interactions.yy","name":"Map Interactions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -76,7 +76,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"Mirai Ni Taishite",
   "resources":[
@@ -117,6 +117,8 @@
     {"id":{"name":"scr_camera_shake","path":"scripts/scr_camera_shake/scr_camera_shake.yy",},},
     {"id":{"name":"scr_collisions","path":"scripts/scr_collisions/scr_collisions.yy",},},
     {"id":{"name":"scr_player","path":"scripts/scr_player/scr_player.yy",},},
+    {"id":{"name":"shd_player_shadow","path":"shaders/shd_player_shadow/shd_player_shadow.yy",},},
+    {"id":{"name":"shd_secret_alpha","path":"shaders/shd_secret_alpha/shd_secret_alpha.yy",},},
     {"id":{"name":"snd_alien","path":"sounds/snd_alien/snd_alien.yy",},},
     {"id":{"name":"snd_itemfind","path":"sounds/snd_itemfind/snd_itemfind.yy",},},
     {"id":{"name":"snd_shoot_laser","path":"sounds/snd_shoot_laser/snd_shoot_laser.yy",},},

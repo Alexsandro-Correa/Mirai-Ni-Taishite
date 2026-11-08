@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_secret_alpha",
+  "name":"shd_secret_alpha",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Objetos/Player.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

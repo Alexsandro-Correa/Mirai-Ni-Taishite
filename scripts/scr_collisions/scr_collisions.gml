@@ -3,5 +3,6 @@
 function scr_collisions(){
 	global.floor = layer_tilemap_get_id("tile_floor");
 	global.plataform = layer_tilemap_get_id("tile_plataform");
+	global.secret = layer_tilemap_get_id("tile_secret");
 
 }

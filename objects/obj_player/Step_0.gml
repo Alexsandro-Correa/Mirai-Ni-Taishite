@@ -173,6 +173,31 @@ else // subindo (batendo cabeça)
     }
 }
 
+// Deixa o Tile Secret Transparente
+
+var _secret_top =
+    tilemap_get_at_pixel(
+        global.secret_tilemap,
+        bbox_right,
+        bbox_top + 4
+    );
+
+var _secret_bottom =
+    tilemap_get_at_pixel(
+        global.secret_tilemap,
+        bbox_right,
+        bbox_bottom - 4
+    );
+
+if (_secret_top != 0 || _secret_bottom != 0)
+{
+    global.secret_alpha = 0.3;
+}
+else
+{
+    global.secret_alpha = 1.0;
+}
+
 #endregion
 
 

@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_player_shadow",
+  "name":"shd_player_shadow",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Objetos/Player.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

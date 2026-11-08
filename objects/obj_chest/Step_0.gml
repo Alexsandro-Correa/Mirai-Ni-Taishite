@@ -10,6 +10,10 @@ if(place_meeting(x,y,obj_player)){
 	open = true;
 	if(sprite_index = spr_chest){
 		obj_coin.coin += 50;
+		if (image_index == image_number - 1)
+{
+    instance_destroy()
+}
 	}
 }
 

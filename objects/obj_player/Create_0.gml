@@ -49,7 +49,13 @@ spawn_boss = 0;
 
 #endregion
 
+global.secret_tilemap = layer_tilemap_get_id("tile_secret");
+global.secret_alpha = 1.0;
 
+global.shadow_x = 35;
+global.shadow_y = 12;
+global.shadow_scale_x = 1.2;
+global.shadow_scale_y = 0.25;
 
 //show_debug_log(true);
 
