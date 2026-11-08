@@ -15,24 +15,24 @@ Página central do projeto **Mirai ni Taishite**.
 
 (Abrir as subpáginas abaixo)
 
-[História](https://app.notion.com/p/Hist-ria-3e9a08c974088037a570d94d6308239d?pvs=21)
+[História](Hist%C3%B3ria%203e9a08c974088037a570d94d6308239d.md)
 
-[Armas & Mods](https://app.notion.com/p/Armas-Mods-f0859eb4a8ee4d57b6087c5ee05c5a1c?pvs=21)
+[Armas & Mods](Armas%20&%20Mods%20f0859eb4a8ee4d57b6087c5ee05c5a1c.md)
 
-[Fases (Level Design)](https://app.notion.com/p/Fases-Level-Design-417725870a2547eb82df0b4e2f0cd158?pvs=21)
+[Fases (Level Design)](Fases%20(Level%20Design)%20417725870a2547eb82df0b4e2f0cd158.md)
 
-[Inimigos](https://app.notion.com/p/Inimigos-8dbc52cc7833437483d3d46839060512?pvs=21)
+[Inimigos](Inimigos%208dbc52cc7833437483d3d46839060512.md)
 
-[Ideias](https://app.notion.com/p/Ideias-5817ca9d15184b6d99f6ee679b835945?pvs=21)
+[Ideias](Ideias%205817ca9d15184b6d99f6ee679b835945.md)
 
-[Roadmap / TODO](https://app.notion.com/p/Roadmap-TODO-a0fda9a6c1a44704b6f8cf7f046364e7?pvs=21)
+[Roadmap / TODO](Roadmap%20TODO%20a0fda9a6c1a44704b6f8cf7f046364e7.md)
 
-[Economia & Loja](https://app.notion.com/p/Economia-Loja-47a195216eda4708897dae1f60dbcec3?pvs=21)
+[Economia & Loja](Economia%20&%20Loja%2047a195216eda4708897dae1f60dbcec3.md)
 
-[Bosses (12)](https://app.notion.com/p/Bosses-12-df8ffb0a3d7b4facbf53e089b251fb18?pvs=21)
+[Bosses (12)](Bosses%20(12)%20df8ffb0a3d7b4facbf53e089b251fb18.md)
 
-[Sons](https://app.notion.com/p/Sons-5695b94510634cd780b65e63b41818b3?pvs=21)
+[Sons](Sons%205695b94510634cd780b65e63b41818b3.md)
 
-[Sprites](https://app.notion.com/p/Sprites-3dda08c9740880778f17ea6aa07e3970?pvs=21)
+[Sprites](Sprites%203dda08c9740880778f17ea6aa07e3970.md)
 
-[Registros](https://app.notion.com/p/Registros-3e9a08c97408806d80e6e3871fba1e65?pvs=21)
+[Registros](Registros%203e9a08c97408806d80e6e3871fba1e65.md)

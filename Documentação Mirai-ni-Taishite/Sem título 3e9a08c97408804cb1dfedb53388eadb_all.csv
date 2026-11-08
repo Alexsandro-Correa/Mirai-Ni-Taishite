@@ -1,0 +1,6 @@
+﻿Nome,Comportamento,Life,Observações,Onde aparece,Sprite
+Alien,parar e atirar,3,,geral,3eba9f9f-fc5e-4018-9e99-e523a83e4b2a.png
+Biker,dash,3,,geral,3cd1c890-d317-438b-abb8-303ad549471a.png
+Drone,voar e atirar,1,,geral,867c065d-9faf-4364-a86b-72f54a6db98b.png
+Ciborgue,atirar projétil e laser,3,,geral,0e5d069a-188b-47d9-be83-5e530f6b94d1.png
+Bomber,projétil,1,,geral,8a3c278a-1097-4f73-a810-97e8f22df83e.png
